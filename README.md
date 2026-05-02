@@ -46,6 +46,12 @@ Platformda her sipariş oturumu (hem QR hem NFC) başlatıldığında sisteme **
 
 > Bu mimari, "token ele geçirme" saldırılarını donanım katmanında engeller: **kart yoksa token yok, token yoksa sipariş yok.**
 
+| Münü Sipariş Ekranı | Token Süresi Doldu Ekranı |
+|:---:|:---:|
+| ![Menü Sipariş](screenshots/features/Men%C3%BC%20Sayfas%C4%B1%20Sipari%C5%9F%20Verme.png) | ![Token Expired](screenshots/security/Token%20S%C3%BCresi%20Dolmu%C5%9F%20Olan%20Sayfa.png) |
+
+> 🔍 *URL barına dikkat: her oturumda benzersiz bir `token` parametresi görülebilir. Süresi dolan token, sayfayı otomatik olarak kilitler.*
+
 ### 📖 Proje Hakkında
 
 **E-Menum**, restoranlar ve kafeler için geliştirilmiş uçtan uca bir **SaaS + mini ERP** platformudur. Sistem yalnızca bir dijital menü değildir; sipariş yönetimi, masa takibi, gelir/sipariş analitiği, işletme hareketleri logu ve abonelik yönetimini kapsayan **entegre bir işletme yönetim çözümüdür.**
@@ -111,6 +117,10 @@ Platform tek geliştirici tarafından sıfırdan tasarlanıp kodlanmıştır; ö
 |:---:|:---:|:---:|
 | ![NFC](screenshots/features/NFC%20Sepete%20Ürün%20Ekleme%20Oluşturma%20Sayfası.png) | ![Kasa Giriş](screenshots/pos/Kasa%20POS%20Görevlisi%20Giriş%20Ekranı.png) | ![Kasa](screenshots/pos/Kasa%20POS%20Sistemi%20Gelen%20Siparişler%20Ekranı.png) |
 
+| Menü Sayfası — Sipariş Verme | Token Süresi Doldu (Güvenlik Ekranı) |
+|:---:|:---:|
+| ![Menü Sipariş](screenshots/features/Men%C3%BC%20Sayfas%C4%B1%20Sipari%C5%9F%20Verme.png) | ![Token Expired](screenshots/security/Token%20S%C3%BCresi%20Dolmu%C5%9F%20Olan%20Sayfa.png) |
+
 > 💡 Daha fazla ekran görüntüsü için `screenshots/` klasörüne göz atın.
 
 ---
@@ -154,6 +164,12 @@ Every order session initiated (via either QR or NFC) transmits a **time-limited 
 - **With NFC:** A token can only be obtained by physically tapping the NFC card. If the card is not at the table, is far away, or is in someone else's possession — no token is issued, and no order can be initiated.
 
 > This architecture prevents "token hijacking" at the hardware level: **no card = no token, no token = no order.**
+
+| Menu Page — Placing an Order | Token Expired (Security Screen) |
+|:---:|:---:|
+| ![Menu Order](screenshots/features/Men%C3%BC%20Sayfas%C4%B1%20Sipari%C5%9F%20Verme.png) | ![Token Expired](screenshots/security/Token%20S%C3%BCresi%20Dolmu%C5%9F%20Olan%20Sayfa.png) |
+
+> 🔍 *Notice the URL bar: each session carries a unique `token` parameter. When the token expires, the page automatically locks — no further orders can be placed.*
 
 ### 📖 About The Project
 
@@ -219,6 +235,10 @@ Every module — from frontend to backend, payment integration to POS — was in
 | NFC Operations | POS Cashier Login | POS Incoming Orders |
 |:---:|:---:|:---:|
 | ![NFC](screenshots/features/NFC%20Sepete%20Ürün%20Ekleme%20Oluşturma%20Sayfası.png) | ![POS Login](screenshots/pos/Kasa%20POS%20Görevlisi%20Giriş%20Ekranı.png) | ![POS Orders](screenshots/pos/Kasa%20POS%20Sistemi%20Gelen%20Siparişler%20Ekranı.png) |
+
+| Menu Page — Placing an Order | Token Expired (Security Screen) |
+|:---:|:---:|
+| ![Menu Order](screenshots/features/Men%C3%BC%20Sayfas%C4%B1%20Sipari%C5%9F%20Verme.png) | ![Token Expired](screenshots/security/Token%20S%C3%BCresi%20Dolmu%C5%9F%20Olan%20Sayfa.png) |
 
 > 💡 Browse the `screenshots/` folder for more visuals.
 
