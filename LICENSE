@@ -1,0 +1,227 @@
+PROPRIETARY SOFTWARE LICENSE / TELİF HAKKI LİSANSI
+
+Copyright (c) 2024-2025 Deniz Sevinç
+All Rights Reserved. / Tüm Haklar Saklı.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+ENGLISH
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+INTELLECTUAL PROPERTY NOTICE
+
+The concept, design, architecture, and full implementation of this
+platform — including but not limited to:
+
+  • The integration of NFC (Near Field Communication) card technology
+    with restaurant QR menu systems for contactless ordering;
+  • The workflow of writing QR codes onto NFC cards and distributing
+    them as physical touchpoints for digital menus;
+  • The combined use of NFC card ordering + QR digital menu +
+    multi-tenant business management + POS system within a single
+    SaaS platform;
+
+— are original works conceived, designed, and developed solely by
+Deniz Sevinç, and are protected under applicable intellectual
+property and copyright law.
+
+ORIGINAL SECURITY FINDING — PROTECTED INTELLECTUAL DISCOVERY
+
+In the course of developing this platform, the author independently
+identified a critical and previously unaddressed security
+vulnerability in QR-based restaurant ordering systems:
+
+  VULNERABILITY: A QR code used for restaurant table ordering is
+  inherently insecure. Because a QR code is a static, copyable URL,
+  any person who photographs or scans the code — even after leaving
+  the premises — can submit fraudulent orders to the restaurant
+  system indefinitely, from any location, without physical presence.
+  This constitutes a "fake order" or "remote order spoofing" attack
+  vector that requires zero technical knowledge to exploit.
+
+  SOLUTION CONCEIVED BY THE AUTHOR: By embedding the QR code link
+  into a programmable NFC card and using the NFC card as the sole
+  order interface, the author eliminated this attack vector. NFC
+  requires physical card proximity (typically ≤4 cm) to activate.
+  A card cannot be copied via photograph, screenshot, or remote
+  means. This hardware-enforced presence requirement ensures that
+  orders can only be placed by someone physically at the table,
+  with the card in hand.
+
+  TOKEN-BASED SESSION ARCHITECTURE (original design):
+  Every order session initiated — whether via QR or NFC — transmits
+  a time-limited session token to the system. The token validity
+  duration is configurable by the business owner. The distinction
+  is critical:
+
+    - With QR: the code can be scanned repeatedly from any location,
+      and a new token is issued on each scan. A copied QR link can
+      therefore obtain valid tokens indefinitely without restriction.
+
+    - With NFC: a token can only be issued upon physical tap of the
+      NFC card (proximity ≤4 cm). If the card is absent, remote,
+      or in unauthorized hands, no token is issued and no order
+      session can be initiated.
+
+  This creates a hardware-enforced access gate: no physical card =
+  no token = no order. The architecture prevents both fake order
+  injection and token hijacking at the hardware level.
+
+This security analysis, the identification of the vulnerability,
+and the architectural decision to solve it via NFC are original
+intellectual contributions by Deniz Sevinç. Any product or service
+that adopts this specific security rationale — using NFC as a
+replacement for QR in restaurant ordering to prevent fake/remote
+order attacks — without attribution or prior written consent from
+the author may constitute intellectual property infringement.
+
+TERMS OF USE
+
+1. NO COPYING. You may not copy, reproduce, duplicate, or replicate
+   any part of this platform's concept, design, source code,
+   database structure, or business logic, in whole or in part.
+
+2. NO MODIFICATION. You may not modify, adapt, translate, or create
+   derivative works based on this platform.
+
+3. NO DISTRIBUTION. You may not distribute, publish, sublicense,
+   sell, or otherwise transfer this software or any of its
+   components to any third party.
+
+4. NO COMMERCIAL USE. You may not use this platform, its concept,
+   or any portion thereof for commercial purposes without explicit
+   written permission from the author.
+
+5. PORTFOLIO USE ONLY. This repository is made publicly available
+   solely for portfolio and demonstration purposes. Viewing and
+   reading the contents is permitted; any other use is strictly
+   prohibited.
+
+6. NFC CONCEPT & SECURITY FINDING PROTECTION. Any product, service,
+   or platform that replicates the core concept of this project —
+   specifically (a) the use of NFC-programmable cards as a touchpoint
+   for restaurant digital menu and ordering systems, and/or (b) the
+   application of NFC technology as a security measure against fake
+   or remote QR-based order fraud in restaurant systems — without
+   prior written consent from the original author may constitute
+   intellectual property infringement.
+
+DISCLAIMER
+
+THIS SOFTWARE AND CONCEPT IS PROVIDED "AS IS" FOR SHOWCASE
+PURPOSES. THE AUTHOR MAKES NO WARRANTIES OF ANY KIND. THE AUTHOR
+SHALL NOT BE LIABLE FOR ANY CLAIM, DAMAGES, OR OTHER LIABILITY
+ARISING FROM THE USE OR ATTEMPTED REPLICATION OF THIS WORK.
+
+For licensing inquiries or collaboration requests, contact:
+https://github.com/Denizsvnc
+mail : info@denizsevinc.com.tr
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+TÜRKÇE
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+FİKRİ MÜLKİYET BİLDİRİMİ
+
+Bu platformun konsepti, tasarımı, mimarisi ve tüm uygulaması —
+aşağıdakilerle sınırlı olmaksızın:
+
+  • NFC (Yakın Alan İletişimi) kart teknolojisinin restoran QR menü
+    sistemleriyle temassız sipariş amacıyla entegre edilmesi;
+  • QR kodlarının NFC kartlara yazılması ve dijital menüler için
+    fiziksel erişim noktası olarak dağıtılması iş akışı;
+  • NFC kart siparişi + QR dijital menü + çok kiracılı işletme
+    yönetimi + POS sisteminin tek bir SaaS platformu içinde birleşik
+    kullanımı;
+
+— tamamen Deniz Sevinç tarafından tasarlanmış ve geliştirilmiş
+özgün eserlerdir; yürürlükteki fikri mülkiyet ve telif hakkı
+mevzuatı kapsamında korunmaktadır.
+
+ÖZGÜN GÜVENLİK BULGÜSU — KORUNAN FİKRİ KEŞİF
+
+Bu platformun geliştirilmesi sürecinde yazar, QR kod tabanlı restoran
+sipariş sistemlerinde daha önce ele alınmamış kritik bir güvenlik
+açığını bağımsız olarak tespit etmiştir:
+
+  AÇIK: Restoran masa siparişlerinde kullanılan QR kod, yapısal
+  olarak güvensizdir. QR kodu kopyalanabilir bir URL olduğundan,
+  kodu fotoğraflayan veya tarayan herhangi biri — mekândan
+  ayrıldıktan sonra dahi — restoran sistemine herhangi bir yerden,
+  süresiz olarak sahte sipariş gönderebilir. Bu durum, hiçbir
+  teknik bilgi gerektirmeyen "sahte sipariş" veya "uzaktan sipariş
+  sahteciliği" saldırı vektörü oluşturmaktadır.
+
+  YAZARA AİT ÇÖZÜM: QR kodu bağlantısını programlanabilir bir NFC
+  karta yazarak ve NFC kartı tek sipariş arayüzü olarak kullanarak
+  yazar bu saldırı vektörünü ortadan kaldırmıştır. NFC, etkinleşmek
+  için fiziksel yakınlık (tipik olarak ≤4 cm) gerektirmektedir.
+  Kart, fotoğraf, ekran görüntüsü veya uzaktan yollarla
+  kopyalanamaz. Bu donanım kaynaklı fiziksel varlık zorunluluğu,
+  siparişlerin yalnızca masada, elinde kartla bulunan kişi
+  tarafından verilebilmesini güvence altına alır.
+
+  TOKEN TABANLI OTURUM MİMARİSİ (özgün tasarım):
+  Her sipariş oturumu başlatıldığında — QR veya NFC fırkı etmeksizin
+  — sisteme zaman sınırlı bir oturum tokeni iletilir. Token geçerlilik
+  süresi işletme sahibi tarafından yapılandırılabilir. Ayrım kritiktir:
+
+    - QR ile: kod herhangi bir konumdan defalarca taranabilir ve
+      her taramada yeni token üretilir. Kopyalanan QR linki,
+      kısıtlama olmaksızın süresiz geçerli tokenlar alabilir.
+
+    - NFC ile: token yalnızca NFC kartının fiziksel olarak
+      okutulmasıyla (≤4 cm yakınlık) üretilebilir. Kart yoksa,
+      uzaktaysa veya yetkisiz ellerdeyse token üretilmez ve
+      sipariş oturumu başlatılamaz.
+
+  Bu yapı, donanım düzeyinde zorunlu bir erişim kapısı oluşturur:
+  fiziksel kart yok = token yok = sipariş yok. Mimari; hem sahte
+  sipariş enjeksiyonunu hem de token ele geçirme saldırılarını
+  donanım katmanında engeller.
+
+Bu güvenlik analizi, açığın tespiti ve NFC aracılığıyla çözüme
+kavuşturulmasına ilişkin mimari karar; Deniz Sevinç'e ait özgün
+fikri katkılardır. Restoranlarda sahte/uzaktan sipariş saldırılarını
+önlemek amacıyla NFC'nin QR kodunun yerini alması şeklindeki bu
+bulguyu, yazarın atıfı veya önceden yazılı onayı olmaksızın
+benimseyecek her ürün veya hizmet fikri mülkiyet ihlali
+teşkil edebilir.
+
+KULLANIM KOŞULLARI
+
+1. KOPYALAMA YASAKTIR. Bu platformun konseptinin, tasarımının,
+   kaynak kodunun, veritabanı yapısının veya iş mantığının hiçbir
+   bölümünü kısmen veya tamamen kopyalayamazsınız.
+
+2. DEĞİŞTİRME YASAKTIR. Bu platformu değiştiremez, uyarlayamazsınız.
+   Türev eserler oluşturamazsınız.
+
+3. DAĞITMA YASAKTIR. Bu yazılımı veya bileşenlerini üçüncü taraflara
+   dağıtamaz, yayınlayamaz veya devredemezsiniz.
+
+4. TİCARİ KULLANIM YASAKTIR. Yazarın açık yazılı izni olmaksızın bu
+   platform veya konsept ticari amaçlarla kullanılamaz.
+
+5. YALNIZCA PORTFÖLYİÖ AMAÇLI. Bu repo yalnızca portföy ve tanıtım
+   amacıyla kamuya açık tutulmaktadır. İçeriklerin görüntülenmesi
+   serbesttir; diğer tüm kullanımlar kesinlikle yasaktır.
+
+6. NFC KONSEPT VE GÜVENLİK BULGÜSU KORUMASI. Bu projenin temel
+   konseptini — özellikle (a) NFC programlanabilir kartların
+   restoran dijital menü ve sipariş sistemi için erişim noktası
+   olarak kullanılmasını ve/veya (b) NFC teknolojisinin restoran
+   sistemlerinde QR tabanlı sahte veya uzaktan sipariş sahteciliğine
+   karşı güvenlik tedbiri olarak uygulanmasını — özgün yazarın
+   önceden yazılı onayı olmaksızın taklit eden her ürün, hizmet veya
+   platform fikri mülkiyet ihlali teşkil edebilir.
+
+SORUMLULUK REDDİ
+
+BU YAZILIM VE KONSEPT, YALNIZCA TANITIM AMAÇLI "OLDUĞU GİBİ"
+SUNULMAKTADIR. YAZAR HERHANGİ BİR GARANTİ VERMEMEKTE OLUP BU
+ESERİN KULLANILMASINDAN VEYA TAKLİT EDİLMESİNDEN DOĞAN HİÇBİR
+TALEP, ZARAR VEYA YÜKÜMLÜLÜKTEN SORUMLU TUTULAMAZ.
+
+Lisans talepleri veya iş birliği için iletişim:
+https://github.com/Denizsvnc
+mail : info@denizsevinc.com.tr
